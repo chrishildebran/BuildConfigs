@@ -1,0 +1,110 @@
+<Project>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<Target Name="CustomAfterBuildTarget" AfterTargets="Build">
+		<Message Text="Hello from CustomAfterBuildTarget" Importance="high"/>
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="Configuration:....... $(RevitVersion)" Importance="High"/>
+		<Message Text="C:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Version  Properties" Importance="High"/>
+		<Message Text="      Major Version:... $(MajorVersion)" Importance="High"/>
+		<Message Text="      Minor Version:... $(MinorVersion)" Importance="High"/>
+		<Message Text="      Build:........... $(Build)" Importance="High"/>
+		<Message Text="      Revision:........ $(Revision)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Company  Properties" Importance="High"/>
+		<Message Text="      Company:............. $(Company)" Importance="High"/>
+		<Message Text="      Root Namespace:...... $(RootNamespace)" Importance="High"/>
+		<Message Text="      Install Directory:... $(InstallDirectory)" Importance="High"/>
+		<Message Text="      Repository Url:...... $(RepositoryUrl)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Context  Properties" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Project  Properties" Importance="High"/>
+		<Message Text="      Title:......... $(ProjectTitle)" Importance="High"/>
+		<Message Text="      Description:... $(ProjectDescription)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Solution Properties" Importance="High"/>
+		<Message Text="      Solution Dir:......... $(SolutionDir)" Importance="High"/>
+		<Message Text="      Solution Ext:......... $(SolutionExt)" Importance="High"/>
+		<Message Text="      Solution File Name:... $(SolutionFileName)" Importance="High"/>
+		<Message Text="      Solution Name:........ $(SolutionName)" Importance="High"/>
+		<Message Text="      Solution Path:........ $(SolutionPath)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  CS Project  Properties" Importance="High"/>
+		<Message Text="      Project Dir:......... $(ProjectDir)" Importance="High"/>
+		<Message Text="      Project Ext:......... $(ProjectExt)" Importance="High"/>
+		<Message Text="      Project File Name:... $(ProjectFileName)" Importance="High"/>
+		<Message Text="      Project Name:........ $(MSBuildProjectName)" Importance="High"/>
+		<Message Text="      Project Path:........ $(ProjectPath)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Assembly Info Properties" Importance="High"/>
+		<Message Text="      Generate Assembly Info:.............................. $(GenerateAssemblyInfo)" Importance="High"/>
+		<Message Text="      Generate Assembly Version Attribute:................. $(GenerateAssemblyVersionAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly File Version Attribute:............ $(GenerateAssemblyFileVersionAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Company Attribute:................. $(GenerateAssemblyCompanyAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Configuration Attribute:........... $(GenerateAssemblyConfigurationAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Copyrigh tAttribute:............... $(GenerateAssemblyCopyrightAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Description Attribute:............. $(GenerateAssemblyDescriptionAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Informational Version Attribute:... $(GenerateAssemblyInformationalVersionAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Metadata Attribute:................ $(GenerateAssemblyMetadataAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Product Attribute:................. $(GenerateAssemblyProductAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Title Attribute:................... $(GenerateAssemblyTitleAttribute)" Importance="High"/>
+		<Message Text="      Generate Neutral Resources Language Attribute:....... $(GenerateNeutralResourcesLanguageAttribute)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Assembly Properties" Importance="High"/>
+		<Message Text="      Assembly Name:... $(AssemblyName)" Importance="High"/>
+		<Message Text="      ! Add Properties from Assembly.Build.props !" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Output Properties" Importance="High"/>
+		<Message Text="      Copy To Output Directory:... $(CopyToOutputDirectory)" Importance="High"/>
+		<Message Text="      Target Dir:................. $(TargetDir)" Importance="High"/>
+		<Message Text="      Target Ext:................. $(TargetExt)" Importance="High"/>
+		<Message Text="      Target Framework:........... $(TargetFramework)" Importance="High"/>
+		<Message Text="      Target FileName:............ $(TargetFileName)" Importance="High"/>
+		<Message Text="      Target Name:................ $(TargetName)" Importance="High"/>
+		<Message Text="      Target Path:................ $(TargetPath)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Package Properties" Importance="High"/>
+		<Message Text="      UpdatePackageVersion:....... $(UpdatePackageVersion)" Importance="High"/>
+		<Message Text="      AssemblyInfoVersionType:.... $(AssemblyInfoVersionType)" Importance="High"/>
+		<Message Text="      InheritWinAppVersionFrom:... $(InheritWinAppVersionFrom)" Importance="High"/>
+		<Message Text="      GeneratePackageOnBuild:..... $(GeneratePackageOnBuild)" Importance="High"/>
+		<Message Text="      Version:.................... $(Version)" Importance="High"/>
+		<Message Text="      Company:.................... $(Company)" Importance="High"/>
+		<Message Text="      PackageId:.................. $(PackageId)" Importance="High"/>
+		<Message Text="      Authors:.................... $(Authors)" Importance="High"/>
+		<Message Text="      Product:.................... $(Product)" Importance="High"/>
+		<Message Text="      Description:.................$(Description)" Importance="High"/>
+		<Message Text="      Title:...................... $(Title)" Importance="High"/>
+		<Message Text="      PackageReadmeFile:.......... $(PackageReadmeFile)" Importance="High"/>
+		<Message Text="      RepositoryType:............. $(RepositoryType)" Importance="High"/>
+		<Message Text="      RepositoryUrl:.............. $(RepositoryUrl)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
+		<Message Text="  Miscelaneous Properties" Importance="High"/>
+		<Message Text="      AL Tools Path:................... $(ALToolsPath)" Importance="High"/>
+		<Message Text="      Assembly Search Paths:........... $(AssemblySearchPaths)" Importance="High"/>
+		<Message Text="      Configuration Name:.............. $(ConfigurationName)" Importance="High"/>
+		<Message Text="      Configuration:................... $(Configuration)" Importance="High"/>
+		<Message Text="      Csc Tools Path:.................. $(CscToolsPath)" Importance="High"/>
+		<Message Text="      Dev Env Dir:..................... $(DevEnvDir)" Importance="High"/>
+		<Message Text="      Disable Fast Up To Date Check:... $(DisableFastUpToDateCheck)" Importance="High"/>
+		<Message Text="      Framework Dir:................... $(FrameworkDir)" Importance="High"/>
+		<Message Text="      Framework SDK Dir:............... $(FrameworkSDKDir)" Importance="High"/>
+		<Message Text="      Framework Version:............... $(FrameworkVersion)" Importance="High"/>
+		<Message Text="      Int Dir:......................... $(IntDir)" Importance="High"/>
+		<Message Text="      Out Dir:......................... $(OutDir)" Importance="High"/>
+		<Message Text="      Platform Short Name:............. $(PlatformShortName)" Importance="High"/>
+		<Message Text="      Platform:........................ $(Platform)" Importance="High"/>
+		<Message Text="      Publis hDir:..................... $(PublishDir)" Importance="High"/>
+		<Message Text="      Remote Machine:.................. $(RemoteMachine)" Importance="High"/>
+		<Message Text="      RootName Space:.................. $(RootNameSpace)" Importance="High"/>
+		<Message Text="      VC Install Dir:.................. $(VCInstallDir)" Importance="High"/>
+		<Message Text="      Visual Studio Version:........... $(VisualStudioVersion)" Importance="High"/>
+		<Message Text="      Web Deploy Path:................. $(WebDeployPath)" Importance="High"/>
+		<Message Text="https://learn.microsoft.com/en-us/cpp/build/reference/common-macros-for-build-commands-and-properties?view=msvc-170" Importance="High"/>
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
+	</Target>
+</Project>

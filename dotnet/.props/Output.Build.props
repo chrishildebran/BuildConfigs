@@ -1,0 +1,11 @@
+<Project>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<PropertyGroup>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>$(Configuration)</DefineConstants>
+		<NoWarn>MSB3052</NoWarn>
+		<DebugType>None</DebugType>
+		<RootNamespace>$(AssemblyName)</RootNamespace>
+	</PropertyGroup>
+</Project>

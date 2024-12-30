@@ -1,0 +1,23 @@
+<Project>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<!--Calculate Version-->
+	<PropertyGroup>
+		<MajorVersion>$([System.DateTime]::Now.ToString("yy"))</MajorVersion>
+		<MinorVersion>$([System.DateTime]::Now.Month)</MinorVersion>
+		<Build>$([System.DateTime]::Now.Day)</Build>
+		<Revision>$([MSBuild]::Divide($([System.DateTime]::Now.TimeOfDay.TotalSeconds), 60).ToString('F0'))</Revision>
+		<VersionCalculated>$(MajorVersion).$(MinorVersion).$(Build).$(Revision)</VersionCalculated>
+		<FileVersionCalculated>$(MajorVersion).$(MinorVersion).$(Build).$(Revision)</FileVersionCalculated>
+	</PropertyGroup>
+	<!--Set Assembly Version And Assembly File Version-->
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Reflection.AssemblyVersionAttribute">
+			<_Parameter1>$(VersionCalculated)</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Reflection.AssemblyFileVersionAttribute">
+			<_Parameter1>$(FileVersionCalculated)</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+</Project>
