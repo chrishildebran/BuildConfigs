@@ -1,11 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
 	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
 	<Target Name="CustomAfterBuildTarget" AfterTargets="Build">
-		<Message Text="Hello from CustomAfterBuildTarget" Importance="high"/>
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
+		<Message Text="asdf Configuration:....... $(Configuration)" Importance="High"/>
+		<Message Text="asdf Revit Constant:....... $(RevitConstant)" Importance="High"/>
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
 		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
 		<Message Text=" " Importance="High"/>
-		<Message Text="Configuration:....... $(RevitVersion)" Importance="High"/>
-		<Message Text="C:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Version  Properties" Importance="High"/>
@@ -15,9 +17,9 @@
 		<Message Text="      Revision:........ $(Revision)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Company  Properties" Importance="High"/>
-		<Message Text="      Company:............. $(Company)" Importance="High"/>
+		<Message Text="      Name:............. $(Company)" Importance="High"/>
 		<Message Text="      Root Namespace:...... $(RootNamespace)" Importance="High"/>
-		<Message Text="      Install Directory:... $(InstallDirectory)" Importance="High"/>
+		<Message Text="      Directory:... $(CompanyDirectory)" Importance="High"/>
 		<Message Text="      Repository Url:...... $(RepositoryUrl)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Context  Properties" Importance="High"/>
@@ -27,18 +29,18 @@
 		<Message Text="      Description:... $(ProjectDescription)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Solution Properties" Importance="High"/>
-		<Message Text="      Solution Dir:......... $(SolutionDir)" Importance="High"/>
-		<Message Text="      Solution Ext:......... $(SolutionExt)" Importance="High"/>
-		<Message Text="      Solution File Name:... $(SolutionFileName)" Importance="High"/>
-		<Message Text="      Solution Name:........ $(SolutionName)" Importance="High"/>
-		<Message Text="      Solution Path:........ $(SolutionPath)" Importance="High"/>
+		<Message Text="      Directory:... $(SolutionDir)" Importance="High"/>
+		<Message Text="      Exttension:.. $(SolutionExt)" Importance="High"/>
+		<Message Text="      File Name:... $(SolutionFileName)" Importance="High"/>
+		<Message Text="      Name:........ $(SolutionName)" Importance="High"/>
+		<Message Text="      Path:........ $(SolutionPath)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  CS Project  Properties" Importance="High"/>
-		<Message Text="      Project Dir:......... $(ProjectDir)" Importance="High"/>
-		<Message Text="      Project Ext:......... $(ProjectExt)" Importance="High"/>
-		<Message Text="      Project File Name:... $(ProjectFileName)" Importance="High"/>
-		<Message Text="      Project Name:........ $(MSBuildProjectName)" Importance="High"/>
-		<Message Text="      Project Path:........ $(ProjectPath)" Importance="High"/>
+		<Message Text="      Directory:... $(ProjectDir)" Importance="High"/>
+		<Message Text="      Extension:... $(ProjectExt)" Importance="High"/>
+		<Message Text="      File Name:... $(ProjectFileName)" Importance="High"/>
+		<Message Text="      Name:........ $(MSBuildProjectName)" Importance="High"/>
+		<Message Text="      Path:........ $(ProjectPath)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Assembly Info Properties" Importance="High"/>
 		<Message Text="      Generate Assembly Info:.............................. $(GenerateAssemblyInfo)" Importance="High"/>
@@ -46,7 +48,7 @@
 		<Message Text="      Generate Assembly File Version Attribute:............ $(GenerateAssemblyFileVersionAttribute)" Importance="High"/>
 		<Message Text="      Generate Assembly Company Attribute:................. $(GenerateAssemblyCompanyAttribute)" Importance="High"/>
 		<Message Text="      Generate Assembly Configuration Attribute:........... $(GenerateAssemblyConfigurationAttribute)" Importance="High"/>
-		<Message Text="      Generate Assembly Copyrigh tAttribute:............... $(GenerateAssemblyCopyrightAttribute)" Importance="High"/>
+		<Message Text="      Generate Assembly Copyright Attribute:............... $(GenerateAssemblyCopyrightAttribute)" Importance="High"/>
 		<Message Text="      Generate Assembly Description Attribute:............. $(GenerateAssemblyDescriptionAttribute)" Importance="High"/>
 		<Message Text="      Generate Assembly Informational Version Attribute:... $(GenerateAssemblyInformationalVersionAttribute)" Importance="High"/>
 		<Message Text="      Generate Assembly Metadata Attribute:................ $(GenerateAssemblyMetadataAttribute)" Importance="High"/>
@@ -55,8 +57,23 @@
 		<Message Text="      Generate Neutral Resources Language Attribute:....... $(GenerateNeutralResourcesLanguageAttribute)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Assembly Properties" Importance="High"/>
-		<Message Text="      Assembly Name:... $(AssemblyName)" Importance="High"/>
-		<Message Text="      ! Add Properties from Assembly.Build.props !" Importance="High"/>
+		<Message Text="      Advanced Settings Expanded:....................................... $(AdvancedSettingsExpanded)" Importance="High"/>
+		<Message Text="      Analysis Level:................................................... $(AnalysisLevel)" Importance="High"/>
+		<Message Text="      Assembly Name:.................................................... $(AssemblyName)" Importance="High"/>
+		<Message Text="      Configurations:................................................... $(Configurations)" Importance="High"/>
+		<Message Text="      Copy To Output Directory:......................................... $(CopyToOutputDirectory)" Importance="High"/>
+		<Message Text="      Do Not Copy Local If In Gac:...................................... $(DoNotCopyLocalIfInGac)" Importance="High"/>
+		<Message Text="      Import Windows Desktop Targets:................................... $(ImportWindowsDesktopTargets)" Importance="High"/>
+		<Message Text="      Lang Version:..................................................... $(LangVersion)" Importance="High"/>
+		<Message Text="      Output Type:...................................................... $(OutputType)" Importance="High"/>
+		<Message Text="      Platform Target:.................................................. $(PlatformTarget)" Importance="High"/>
+		<Message Text="      Platforms:.........................................................$(Platforms)" Importance="High"/>
+		<Message Text="      Resolve Assembly Warn Or Error On Target Architecture Mismatch:... $(ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch)" Importance="High"/>
+		<Message Text="      Should Create Log:................................................ $(ShouldCreateLogs)" Importance="High"/>
+		<Message Text="      Update Assembly File Version:..................................... $(UpdateAssemblyFileVersion)" Importance="High"/>
+		<Message Text="      Update Assembly Info Version:..................................... $(UpdateAssemblyInfoVersion)" Importance="High"/>
+		<Message Text="      Update Assembly Version:.......................................... $(UpdateAssemblyVersion)" Importance="High"/>
+		<Message Text="      Use WPF:.......................................................... $(UseWPF)" Importance="High"/>
 		<Message Text=" " Importance="High"/>
 		<Message Text="  Output Properties" Importance="High"/>
 		<Message Text="      Copy To Output Directory:... $(CopyToOutputDirectory)" Importance="High"/>
@@ -104,6 +121,7 @@
 		<Message Text="      VC Install Dir:.................. $(VCInstallDir)" Importance="High"/>
 		<Message Text="      Visual Studio Version:........... $(VisualStudioVersion)" Importance="High"/>
 		<Message Text="      Web Deploy Path:................. $(WebDeployPath)" Importance="High"/>
+		<Message Text=" " Importance="High"/>
 		<Message Text="https://learn.microsoft.com/en-us/cpp/build/reference/common-macros-for-build-commands-and-properties?view=msvc-170" Importance="High"/>
 		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
 	</Target>

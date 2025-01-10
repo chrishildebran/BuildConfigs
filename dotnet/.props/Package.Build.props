@@ -1,25 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
-    <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
-    <PropertyGroup>
-       
-	   <!--Required-->
-        <PackageId>$(AssemblyName).$(Configuration)</PackageId>
-        <Authors>Team</Authors>
-        <Company>$(Company)</Company>
-        <Version>$(VersionCalculated)</Version>
-		<PackageLicenseFile>license.txt</PackageLicenseFile>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
-       
-
-	   <!--Optional-->
-        <Description>$(ProjectDescription)</Description>
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <PackageOutputPath>C:\Repo\$(Company)\.nuget</PackageOutputPath>
-        <PackageReadmeFile>readme.md</PackageReadmeFile>
-        <Product>$(AssemblyName)</Product>
-        <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>$(GitHubUrl)</RepositoryUrl>
-        <Title>$(ProjectTitle)</Title>
-        <UpdatePackageVersion>True</UpdatePackageVersion>
-    </PropertyGroup>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<PropertyGroup>
+		<!--Required-->
+		<PackageId>$(AssemblyName).$(Configuration)</PackageId>
+		<Authors>Team</Authors>
+		<Company>$(Company)</Company>
+		<Version>$(VersionCalculated)</Version> 
+		<!--Optional-->
+		<Description>$(ProjectDescription)</Description>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageOutputPath>C:\Repo\$(Company)\.nuget</PackageOutputPath>
+		<Product>$(AssemblyName)</Product>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>$(GitHubUrl)</RepositoryUrl>
+		<Title>$(ProjectTitle)</Title>
+		<UpdatePackageVersion>True</UpdatePackageVersion>
+	</PropertyGroup>
 </Project>

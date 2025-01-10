@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
 	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
 	<!--Calculate Version-->
@@ -5,7 +6,8 @@
 		<MajorVersion>$([System.DateTime]::Now.ToString("yy"))</MajorVersion>
 		<MinorVersion>$([System.DateTime]::Now.Month)</MinorVersion>
 		<Build>$([System.DateTime]::Now.Day)</Build>
-		<Revision>$([MSBuild]::Divide($([System.DateTime]::Now.TimeOfDay.TotalSeconds), 60).ToString('F0'))</Revision>
+		<!-- <Revision>$([MSBuild]::Divide($([System.DateTime]::Now.TimeOfDay.TotalSeconds), 60).ToString('F0'))</Revision> -->
+		<Revision>$([System.DateTime]::Now.ToString("HHmm"))</Revision>
 		<VersionCalculated>$(MajorVersion).$(MinorVersion).$(Build).$(Revision)</VersionCalculated>
 		<FileVersionCalculated>$(MajorVersion).$(MinorVersion).$(Build).$(Revision)</FileVersionCalculated>
 	</PropertyGroup>

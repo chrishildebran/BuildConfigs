@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<Choose>
+		<When Condition="!$(Configuration.Contains('Debug'))">
+			<PropertyGroup>
+				<Optimize>true</Optimize>
+				<OutputPath>bin\Release\$(RevitVersion)</OutputPath>
+				 <DefineConstants>REVIT$(RevitVersion)</DefineConstants> 
+				<NoWarn>MSB3052;XDG0008</NoWarn>
+				<DebugType>None</DebugType>
+			</PropertyGroup>
+		</When>
+		<When Condition="$(Configuration.Contains('Debug'))">
+			<PropertyGroup>
+				<DebugSymbols>true</DebugSymbols>
+				<OutputPath>bin\Debug\$(RevitVersion)</OutputPath>
+				<DefineConstants>REVIT$(RevitVersion);DEBUG;TRACE</DefineConstants>			 
+				<DebugType>Full</DebugType>
+				<StartAction>Program</StartAction>
+				<StartProgram>C:\Program Files\Autodesk\Revit $(RevitVersion)\Revit.exe</StartProgram>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				 
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+</Project>

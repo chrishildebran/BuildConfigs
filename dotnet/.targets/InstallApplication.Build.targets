@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
+		<!--Assembly File Section-->
+		<ItemGroup>
+			<AssembliesSourceFiles Include="$(OutDir)*.dll"/>
+			<AssembliesDestinationFolder Include="$(CompanyDirectory)\$(ProjectTitle)\$(RevitVersion)"/>
+		</ItemGroup>
+		<Message Text="Copying Assemblies to Installation Directory '@(AssembliesDestinationFolder)'" Importance="High"/>
+		<Copy SourceFiles="@(AssembliesSourceFiles)" DestinationFolder="@(AssembliesDestinationFolder)"/>
+		<Message Text="------------------------------------------------------------------------------------------" Importance="High"/>
+	</Target>
+</Project>
