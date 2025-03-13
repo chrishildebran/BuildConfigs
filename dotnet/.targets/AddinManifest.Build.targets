@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="GenerateAddinFile" AfterTargets="AfterBuild">
+		<!--PATHS-->
+		<PropertyGroup>
+			<AddinRootPath>$(ProjectDir)\Application\AddinManifests\$(RevitVersion)</AddinRootPath>
+			<AddinFilePath>$(AddinRootPath)\Kelly Tools For Revit.addin</AddinFilePath>
+			<AddinDestinationPath>C:\ProgramData\Autodesk\Revit\Addins\$(RevitVersion)</AddinDestinationPath>
+		</PropertyGroup>
+		<!--CONTENTS-->
+		<ItemGroup>
+			<AddinLines Include="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;"/>
+			<AddinLines Include="&lt;RevitAddIns&gt;"/>
+			<AddinLines Include="  &lt;AddIn Type=&quot;Application&quot;&gt;"/>
+			<AddinLines Include="    &lt;AddInId&gt;321044f7-b0b3-4b1c-af18-e71a1925$(RevitVersion)&lt;/AddInId&gt;"/>
+			<AddinLines Include="    &lt;Assembly&gt;C:\Program Files\JH Kelly\Kelly Tools For Revit\$(RevitVersion)\$(SolutionName).dll&lt;/Assembly&gt;"/>
+			<AddinLines Include="    &lt;FullClassName&gt;$(SolutionName).App&lt;/FullClassName&gt;"/>
+			<AddinLines Include="    &lt;Name&gt;Kelly Tools For Revit $(RevitVersion)&lt;/Name&gt;"/>
+			<AddinLines Include="    &lt;ProductDescription&gt;Suite Of Productivity Tools For Use With Autodesk Revit $(RevitVersion)&lt;/ProductDescription&gt;"/>
+			<AddinLines Include="    &lt;ProductVersion&gt;$(FileVersionCalculated)&lt;/ProductVersion&gt;"/>
+			<AddinLines Include="    &lt;Publisher&gt;JH Kelly&lt;/Publisher&gt;"/>
+			<AddinLines Include="    &lt;VendorDescription&gt;www.jhkelly.com&lt;/VendorDescription&gt;"/>
+			<AddinLines Include="    &lt;VendorId&gt;com.jhkelly.KellyToolsRevit&lt;/VendorId&gt;"/>
+			<AddinLines Include="  &lt;/AddIn&gt;"/>
+			<AddinLines Include="&lt;/RevitAddIns&gt;"/>
+		</ItemGroup>
+		<!--WRITE TO ADDIN FILE-->
+		<WriteLinesToFile File="$(AddinFilePath)" Lines="@(AddinLines)" Overwrite="true"/>
+		<!--COPY ADDIN MANIFEST TO INSTALLATION DIRECTORY-->
+		<ItemGroup>
+			<ManifestSourceFiles Include="$(AddinRootPath)\*.addin"/>
+			<ManifestDestinationFolder Include="C:\ProgramData\Autodesk\Revit\Addins\$(RevitVersion)"/>
+		</ItemGroup>
+		<Message Text="Copying Addin Manifests to Installation Directory '@(ManifestDestinationFolder)'" Importance="High"/>
+		<Copy SourceFiles="@(ManifestSourceFiles)" DestinationFolder="@(ManifestDestinationFolder)"/>
+	</Target>
+</Project>
