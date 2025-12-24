@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"
+      encoding="utf-8"?>
 <Project>
 	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
 	<PropertyGroup>
 		<!--Required-->
-		<PackageId>$(AssemblyName).$(Configuration)</PackageId>
+		<PackageId>$(SolutionName).$(Configuration)</PackageId>
 		<Authors>Team</Authors>
 		<Company>$(Company)</Company>
-		<Version>$(VersionCalculated)</Version> 
+		<Version>$(VersionCalculated)</Version>
 		<!--Optional-->
 		<Description>$(ProjectDescription)</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageOutputPath>C:\Repo\$(Company)\.nuget</PackageOutputPath>
-		<Product>$(AssemblyName)</Product>
+		<PackageOutputPath>C:\Repo\NugetPackages</PackageOutputPath>
+		<Product>$(SolutionName)</Product>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>$(GitHubUrl)</RepositoryUrl>
 		<Title>$(ProjectTitle)</Title>
