@@ -5,7 +5,7 @@
 		<Optimize>true</Optimize>
 		<OutputPath>bin\Release\</OutputPath>
 		<DefineConstants>$(DefineConstants);$(Configuration)</DefineConstants>
-		<NoWarn>MSB3052</NoWarn>
+		<NoWarn>(NoWarn);CS1591;MSB3052;CA1416;IDE0028;CA1418</NoWarn>
 		<DebugType>None</DebugType>
 	</PropertyGroup>
 </Project>
