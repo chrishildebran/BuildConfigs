@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project>
-	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
-	<!--Calculate Version-->
+<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+<Project>	
+	<!--Set Update Assembly Values-->
+	<PropertyGroup>
+		<UpdateAssemblyFileVersion>true</UpdateAssemblyFileVersion>
+		<UpdateAssemblyInfoVersion>true</UpdateAssemblyInfoVersion>
+		<UpdateAssemblyVersion>true</UpdateAssemblyVersion>
+	</PropertyGroup>
+		<!--Calculate Version-->
 	<PropertyGroup>
 		<MajorVersion>$([System.DateTime]::Now.ToString("yy"))</MajorVersion>
 		<MinorVersion>$([System.DateTime]::Now.Month)</MinorVersion>

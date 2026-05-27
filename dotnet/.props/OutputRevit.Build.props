@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 	<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
- 
+	 
 	<Choose>
 		<When Condition="!$(Configuration.Contains('Debug'))">
 			<PropertyGroup>
